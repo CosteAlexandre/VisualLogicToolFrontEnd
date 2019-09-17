@@ -1,0 +1,20 @@
+
+<div class = "nav-border" id ='palette'>
+        
+                <mat-expansion-panel *ngFor="let type of nodeTypes " (opened)="openGroup(type)">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{type.type}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      {{type.type}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <div id ={{type.type}}>COUCOU</div>
+              
+                  
+                </mat-expansion-panel>
+                
+              
+</div>

@@ -1,0 +1,52 @@
+
+<mat-tab-group>
+  
+  
+  <mat-tab label="Data">
+    <h1 mat-dialog-title>Node Data</h1>
+    <div *ngIf="!multipleoutput">
+        <app-dynamic-form [fields]="fields[0]"></app-dynamic-form>
+        <button *ngIf="node.labelType ==='InputNode'" (click) = "onTriggerApi()">trigger Api</button>
+    </div>
+    
+    <div *ngIf="multipleoutput">
+      
+      <mat-expansion-panel *ngFor = "let field of fields">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Condition
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+    
+        <app-dynamic-form [fields]="field"></app-dynamic-form>
+        
+      <button (click) = "onDeleteCondition(field)">Delete Condition</button>
+      </mat-expansion-panel>
+      <button (click) = "onAddCondition()">Add Condition</button>
+      
+      
+    </div>
+  </mat-tab>
+
+
+  <mat-tab label="Informations">
+    <h1 mat-dialog-title>Node informations</h1>
+    <mat-dialog-content class="mat-typography">
+      <h2>Node {{node.name}}</h2>
+      <p>{{node.description}}</p>
+
+      <h3>Fields</h3>
+      <div *ngFor = "let field of node.fields">
+        <p>{{field.name}} : {{field.description}}</p>
+      </div>
+      
+    </mat-dialog-content>
+    
+  </mat-tab>
+
+
+</mat-tab-group>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+

@@ -1,0 +1,10 @@
+.bar{
+    height: 10%;
+}
+.content{
+    overflow: auto;
+  }
+
+.inf{
+    background-color: red
+}

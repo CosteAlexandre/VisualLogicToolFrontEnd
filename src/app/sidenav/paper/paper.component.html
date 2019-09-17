@@ -1,0 +1,23 @@
+<div class = "bar" id ="bar">
+        <input [(ngModel)]="name" placeholder="name"/>
+        <mat-form-field >
+                <mat-label>Select a flow</mat-label>
+                <mat-select [(value)]="selected" (selectionChange)="getGraph($event)">
+                  <mat-option *ngFor="let flowId of listId " value="{{flowId}}">{{flowId}}</mat-option>
+                  
+                </mat-select>
+        </mat-form-field>
+        <button mat-button (click) = "onSubmit()">Submit</button>
+        <button mat-button (click) = "onDelete()">Delete</button>
+        <button mat-button (click) = "onUpdate()">Update</button>
+        <button mat-button (click) = "onReset()">Reset</button>
+        <button mat-button (click) = "onExport()">Export</button> 
+        <button mat-button (click) = "onLog()">Log</button>
+        <button *ngIf="flowInfinite" mat-button class="inf">Inf</button>
+</div>
+<div class = "content" id="canvas"  >
+    
+</div>
+<div>
+        
+</div>
